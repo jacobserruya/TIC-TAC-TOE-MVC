@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     })
 
-
 })
 
 function handeClick (event){
@@ -18,7 +17,17 @@ function handeClick (event){
         setTimeout(()=>{
         alert("Player "+(playertime+1)+" is the winner!")},10)
      }
-    updateSquares();
+    updateSquare(position);
+}
+
+function updateSquare(position){
+    square = document.getElementById(position.toString())
+
+        symbol = board[position]
+        
+        if(symbol!=""){
+            square.innerHTML=`<div class="${symbol}"></div>`
+        }
 }
 
 
@@ -37,5 +46,16 @@ function updateSquares() {
 
     })
 
-
 }
+    function reset(){
+
+        let squares = document.querySelectorAll(".square");
+        squares.forEach((square)=>{
+    
+            square.innerHTML ="";
+            
+            resetGame();
+        })
+    }
+
+

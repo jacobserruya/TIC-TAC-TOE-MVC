@@ -52,3 +52,13 @@ function isWin () {
     return false;
 
 }
+
+function resetGame(){
+    for(let i =0;i<board.length;i++ ){
+        board[i] ="";
+    }
+    playertime=0;
+    gameOver=false;
+
+
+}
